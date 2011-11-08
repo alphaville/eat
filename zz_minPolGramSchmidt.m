@@ -95,5 +95,5 @@ for i=1:k
         end
     end
 end
-poly=[1 -(R\c)'];
+poly=[1 fliplr(-(R\c)')];
 error = norm(polymatrixval(poly,A),'fro');
