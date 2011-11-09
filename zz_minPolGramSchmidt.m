@@ -10,19 +10,22 @@ function [k poly error] = zz_minPolGramSchmidt(A,tol)
 % working example. For that, consider:
 % 
 % A=diag([1;1;2;2;3]);
-% [k poly error] = zz_minPolGramSchmidt(A,tol);
+% [k poly error] = zz_minPolGramSchmidt(A,1E-7);
 %
 % The error value returned is 1.0993e-12. However, if you replace A with
-% rand(4,4), it will not work.
+% rand(4,4), it will not work. The criterion upon which acceptance (or
+% rejection) of an result is justified, should be: 
+% accept=error<tol
 %
 % Syntax:
-% [k U]=zz_minPolGramSchmidt(A[, tol])
+% [k poly error]=zz_minPolGramSchmidt(A[, tol])
 %
-% Input...
+% Input...  (Mandatory: 1)
 % A     :   An n-square matrix
-% tol   :   Tolerance. Used to tell whether two eigenvalues are equal
+% tol   :   Tolerance. Used to tell whether two eigenvalues are equal.
+%           (optional)
 %
-% Output...
+% Output... (Mandatory: 1)
 % k     :   The degree of the minimal polynomial of A
 % poly  :   The minimal polynomial of A
 % error :   The norm of poly(A) (should be 0)

@@ -19,8 +19,7 @@ function [polynomial distinctEvals exponents] = zz_minPolAlg(A,tol)
 if nargin==1
     tol=1E-7;
 end
-n=size(A,1);
-assert(size(A,2)==n,'Input inconsistency: A is not a square matrix');
+[~,n]=isSquare(A,true);
 
 
 % Step 1: Collect all distinct eigenvalues of A

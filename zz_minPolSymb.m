@@ -10,6 +10,6 @@ function poly = zz_minPolSymb(A)
 %
 % Warning:
 % The underlying algorithm is not numerically stable.
-
+isSquare(A,true);
 poly = sym2poly(evalin(symengine, ['map(poly2list(linalg::minpoly(' char(sym(A)) ...
     ',x)),c->c[1])']));
