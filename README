@@ -12,8 +12,12 @@ such as
   f0(t) = expm(A*t) where A is an n-square matrix and t in [0,T]
   f1(t) = integral of f1(y) from 0 to t (dy) for t in [0,T]
 
-Content:
-Collection of m-functions for MATLAB 
+Contents:
+
+All functions starting with zz_* are subroutines
+All scripts starting with zt_* are tests
+
+
 
 Documentation:
 Coming soon

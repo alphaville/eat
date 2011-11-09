@@ -81,6 +81,5 @@ Z =[
      F=rand(2,2);
      F=blkdiag(F,F,ones(2,2));
      poly=zz_minPolExhaust(F,1E-4);
-     length(poly)
-     disp(num2str(i));
  end
+ disp('Test 8 :: passed [OK]');
