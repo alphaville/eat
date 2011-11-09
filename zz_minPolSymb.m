@@ -10,6 +10,16 @@ function poly = zz_minPolSymb(A)
 %
 % Warning:
 % The underlying algorithm is not numerically stable.
+
+error(nargchk(1,1,nargin,'This function requires 1 input argument'));
+
 isSquare(A,true);
-poly = sym2poly(evalin(symengine, ['map(poly2list(linalg::minpoly(' char(sym(A)) ...
-    ',x)),c->c[1])']));
+symbolic=['poly2list(linalg::minpoly(' char(sym(A)) ',x))'];
+polynomial = evalin(symengine, symbolic);
+pMaxTerm=polynomial(1);
+maxExpo=eval( pMaxTerm(2));
+poly=zeros(1,maxExpo+1);
+for i=1:length(polynomial)
+    polyTerm=polynomial(i);       
+    poly(maxExpo-eval(polyTerm(2))+1)=eval(polyTerm(1));
+end
