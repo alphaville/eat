@@ -1,10 +1,10 @@
-classdef RandomPolynomial < Polynomial
+classdef randonomial < polynomial
     methods
-        function obj = RandomPolynomial(varargin)
+        function obj = randonomial(varargin)
             if nargin==0
                 deg=round(rand()*10);
             elseif nargin>=1
-                if isa(varargin{1},'Polynomial')
+                if isa(varargin{1},'polynomial')
                     %Copy another polynomial
                     obj.coeff = varargin{1}.coeff;
                     return;
