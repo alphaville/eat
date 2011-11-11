@@ -1,3 +1,4 @@
+function R = cartprod(X)
 %CARTPROD is a combination generator using multiple sets. Providing a
 %pair of sets S={s_i} and T={t_i} produced the set S x T = {(s_i ,
 %t_j)}_i,j, that is their cartesian product.
@@ -25,7 +26,6 @@
 %   cartesian product. The pairs contained in R will therefore be:
 %   (A,C),(A,D),(B,C),(B,D)
 %
-function R = cartprod(X)
 if (~iscell(X))
     error('Input argument is not a cell. Type "help cartprod" for details');
 end
