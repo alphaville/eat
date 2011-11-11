@@ -28,8 +28,8 @@ if ~strcmp(mode,'Numerical') && ...
     error('Wrong Mode: Choose between "Rational", "Real" and "Numerical"!');
 end
 symMatrix=['Dom::Matrix(Dom::' mode ')(' char(sym(A)) ')'];
-symbolic=['poly2list(linalg::minpoly(' symMatrix ',x))']
-polynomial = evalin(symengine, symbolic)
+symbolic=['poly2list(linalg::minpoly(' symMatrix ',x))'];
+polynomial = evalin(symengine, symbolic);
 pMaxTerm=polynomial(1);
 maxExpo=eval( pMaxTerm(2));
 poly=zeros(1,maxExpo+1);

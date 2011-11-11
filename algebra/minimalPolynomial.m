@@ -68,5 +68,6 @@ end
 if options.verify
     
 end
+poly=Polynomial(poly);
 err=norm(polymatrixval(poly,A),'fro');
 verify=err<=options.tolerance;
