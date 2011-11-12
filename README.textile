@@ -1,4 +1,4 @@
-h1. eat MATLAB
+h1. e^At^ MATLAB
 
 
 h3. Project Name:
@@ -8,7 +8,7 @@ eat (version 0.0)
 
 h3. Author:
 
-Pantelis Sopasakis <chvng::at::mail.ntua.gr>
+Pantelis Sopasakis  (alphaville@github.com)
 
 
 h3. Scope:
