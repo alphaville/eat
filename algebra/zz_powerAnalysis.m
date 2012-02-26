@@ -19,7 +19,7 @@ function f = zz_powerAnalysis(A,z,q)
 % Output Arguments:
 % p : A polynomial object so that A^z=p(A) and p has degree equal to the
 %     degree of the minimal polynomial of A.
-
+error(nargchk(2,3,nargin));
 isSquare(A,true);
 if nargin==2
     q=minimalPolynomial(A);
