@@ -27,35 +27,30 @@ end
 h=(t2-t1)/N;
 VertexGNB=cell(N,1);
 % start MATLAB parallel processing pool:
-poolsize=matlabpool('size');
-if poolsize==0
-    disp('MATLAB pool was closed - now starting');
-    matlabpool open;
-end
 parfor i=1:N
     VertexGNB{i}=polyOverAppr1(A,t1+(i-1)*h,t1+i*h);
 end
 
-Vertex={};
 s=length(VertexGNB{1});
-Vertex=[Vertex VertexGNB{1}{1}];
+Vertex={  real(double(VertexGNB{1}{1}))   };
+
 for i=1:N
     for j=1:s
         matrix = VertexGNB{i}{j};
-        if (~contains(matrix,Vertex))
-            Vertex = [Vertex matrix];
+        if (~z_contains(matrix,Vertex))
+            Vertex{end+1} = real(double(matrix));
         end
     end
 end
 
-function flag = contains(matrix,Vcell)
+function flag = z_contains(matrix,Vcell)
 n=length(Vcell);
 flag=false;
 if n==0
     flag=false;
-else   
+else
     for i=1:n
-        if norm(matrix-Vcell{i})<1E-6
+        if norm(double(matrix)-double(Vcell{i})) < 1E-6
             flag=true;
             break;
         end
